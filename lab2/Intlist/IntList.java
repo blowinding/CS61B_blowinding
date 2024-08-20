@@ -84,11 +84,12 @@ public class IntList {
         IntList ptr = A;
         if (A == null) {
             A = B;
+        } else {
+            while (A.rest != null) {
+                A = A.rest;
+            }
+            A.rest = B;
         }
-        while (A.rest != null) {
-            A = A.rest;
-        }
-        A.rest = B;
         return ptr;
     }
 
