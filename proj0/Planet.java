@@ -83,7 +83,7 @@ public class Planet {
     }
 
     public void draw() {
-        double scale = (double) (200 - (-200)) / 2 / 2.50e+11;
+        double scale = (double) (NBody.upScale - NBody.downScale) / 2 / NBody.radius;
         StdDraw.picture(xxPos * scale, yyPos * scale, "images/" + imgFileName);
     }
 }
