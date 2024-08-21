@@ -1,9 +1,9 @@
 import java.util.InputMismatchException;
 
 public class NBody {
-    public static double radius;
-    public static double downScale;
-    public static double upScale;
+    private static double radius;
+    private static double downScale;
+    private static double upScale;
     public static double readRadius(String file) {
         In in = new In(file);
         double radius = 0;
