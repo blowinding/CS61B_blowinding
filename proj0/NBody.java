@@ -1,6 +1,9 @@
 import java.util.InputMismatchException;
 
 public class NBody {
+    public static double radius;
+    public static double downScale;
+    public static double upScale;
     public static double readRadius(String file) {
         In in = new In(file);
         double radius = 0;
@@ -64,7 +67,7 @@ public class NBody {
             return;
         }
         // read from file
-        double radius = readRadius(filename);
+        radius = readRadius(filename);
         Planet[] planets = readPlanets(filename);
         if (planets == null) {
             System.out.println(filename + "is invalid");
@@ -72,8 +75,8 @@ public class NBody {
         }
         // set drawing params
         String universeImgFile = "images/starfield.jpg";
-        int downScale = -200;
-        int upScale = 200;
+        downScale = -200;
+        upScale = 200;
         // start drawing
         double[] xForces = new double[planets.length];
         double[] yForces = new double[planets.length];
@@ -88,7 +91,7 @@ public class NBody {
             }
             for (int i = 0; i < planets.length; i++) {
                 planets[i].update(dt, xForces[i], yForces[i]);
-                planets[i].draw(downScale, upScale, radius);
+                planets[i].draw();
             }
             StdDraw.show();
             StdDraw.pause(10);

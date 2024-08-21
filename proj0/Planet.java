@@ -82,8 +82,8 @@ public class Planet {
         yyPos = yyPos + dt * yyVel;
     }
 
-    public void draw(int downScale, int upScale, double radius) {
-        double scale = (double) (upScale - downScale) / 2 / radius;
+    public void draw() {
+        double scale = (double) (NBody.upScale - NBody.downScale) / 2 / NBody.radius;
         StdDraw.picture(xxPos * scale, yyPos * scale, "images/" + imgFileName);
     }
 }
