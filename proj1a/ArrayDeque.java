@@ -14,6 +14,10 @@ public class ArrayDeque <T>{
         tail = 0;
     }
 
+    public boolean isEmpty(){
+        return size == 0;
+    }
+
     private int getIncrement(int ptr) {
         return (ptr + 1) % array.length;
     }
