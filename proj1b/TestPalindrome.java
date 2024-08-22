@@ -24,4 +24,11 @@ public class TestPalindrome {
         assertTrue(palindrome.isPalindrome("a"));
         assertTrue(palindrome.isPalindrome("aa"));
     }
+
+    @Test
+    public void testIsPalindromeWithCc() {
+        OffByOne offByOne = new OffByOne();
+        assertFalse(palindrome.isPalindrome("aa", offByOne));
+        assertTrue(palindrome.isPalindrome("tops", offByOne));
+    }
 }
